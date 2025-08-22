@@ -1,8 +1,17 @@
-﻿namespace Inventory_Managment_System_Forms
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+using System.IO;
+using System.Windows.Forms;
+
+namespace Inventory_Managment_System_Forms
 {
     public static class FileHandler
     {
-        private static string filePath = "inventory.csv";
+        private static string filePath = Path.Combine(Application.StartupPath, "inventory.csv");
 
         public static void Save(List<InventoryItem> items)
         {
