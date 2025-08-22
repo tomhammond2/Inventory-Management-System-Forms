@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
+using System.Globalization;
+using System.IO;
 
 namespace Inventory_Managment_System_Forms
 {
@@ -30,29 +31,24 @@ namespace Inventory_Managment_System_Forms
         }
 
 
-        public bool DeleteItem(int id)
+        public void DeleteItem (int id)
         {
             var item = items.FirstOrDefault(i => i.Id == id);
             if (item != null)
-            {
                 items.Remove(item);
-                return true;
-            }
-            //items.Remove(item);
-            return false;
         }
 
         public List<InventoryItem> SearchByName(string name)
         {
             return items
-                .Where(i => i.Name.Contains(name, StringComparison.OrdinalIgnoreCase))
+                .Where(i => i.Name.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0)
                 .ToList();
         }
 
         public List<InventoryItem> SearchByCategory(string category)
         {
             return items
-                .Where(i => i.Category.Contains(category, StringComparison.OrdinalIgnoreCase))
+                .Where(i => i.Category.IndexOf(category, StringComparison.OrdinalIgnoreCase) >= 0)
                 .ToList();
         }
         //=> items.Where(i => i.Category.Equals(category, StringComparison.OrdinalIgnoreCase)).ToList();
