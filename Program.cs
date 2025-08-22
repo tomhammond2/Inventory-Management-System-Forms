@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Inventory_Managment_System_Forms
@@ -16,7 +19,7 @@ namespace Inventory_Managment_System_Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new InventroyViewer());
         }
     }
 }
