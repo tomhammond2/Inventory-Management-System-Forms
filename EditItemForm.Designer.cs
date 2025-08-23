@@ -100,7 +100,6 @@
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(47, 20);
             this.txtPrice.TabIndex = 13;
-            this.txtPrice.Text = "£";
             // 
             // label4
             // 
